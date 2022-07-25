@@ -18,7 +18,12 @@ Route::get('/', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+    return view('about' ,[
+    "name"=>"anwar",
+    "gmail"=>"anwar12@gmail.com",
+    "img"=>"anwar.jpg"
+
+    ]);
 });
 
 Route::get('/blog', function () {
