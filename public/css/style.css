@@ -1,14 +1,11 @@
-body{
-    background-color:salmon;
-}
-h1{
-    text-align:center;
-}
-
-td{
-    font-size:150%;
-}
 
 img{
     border-radius:10px;
+    
+}
+
+#container{
+    width:70%;
+    margin-left:9%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
