@@ -35,6 +35,7 @@ Route::get('/blog', function () {
     $blog_post = [
         [
             "title" => "Judul Post Pertama",
+            "slug" => "judul-slug-pertama",
             "author" => "Rian Sopyandi",
             "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores soluta
             voluptas eum commodi inventore reiciendis illum expedita, mollitia
@@ -46,7 +47,8 @@ Route::get('/blog', function () {
         ],
         [
             "title" => "Judul Post Selanjutnya",
-            "author" => "Rian Sopyandi",
+            "slug" => "judul-slug-kedua",
+            "author" => "Anisa Fitria",
             "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores soluta
             voluptas eum commodi inventore reiciendis illum expedita, mollitia
             laboriosam fuga vel nesciunt corrupti! Aliquid tenetur debitis quidem ut delectus
@@ -61,4 +63,45 @@ Route::get('/blog', function () {
         "title"=>"Blog",
         "blog" => $blog_post
     ]);
+});
+
+// routs untuk single blog di halaman blog
+Route::get('blog/{slug}', function($slug){
+    $blog_post = [
+        [
+            "title" => "Judul Post Pertama",
+            "slug" => "judul-slug-pertama",
+            "author" => "Rian Sopyandi",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores soluta
+            voluptas eum commodi inventore reiciendis illum expedita, mollitia
+            laboriosam fuga vel nesciunt corrupti! Aliquid tenetur debitis quidem ut delectus
+            eos eius fuga fugiat architecto, amet corrupti ipsa minima saepe? Possimus corrupti aspernatur
+             nihil sit tenetur debitis sint harum beatae asperiores qui dolor totam iure aut molestias 
+             excepturi, repellendus quasi earum, accusamus in dolorum non. Odio, sint rem. Quas blanditiis
+              consequuntur mollitia sed expedita itaque quam maiores quaerat quisquam delectus!"
+        ],
+        [
+            "title" => "Judul Post Selanjutnya",
+            "slug" => "judul-slug-kedua",
+            "author" => "Anisa Fitria",
+            "body" => "Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam asperiores soluta
+            voluptas eum commodi inventore reiciendis illum expedita, mollitia
+            laboriosam fuga vel nesciunt corrupti! Aliquid tenetur debitis quidem ut delectus
+            eos eius fuga fugiat architecto, amet corrupti ipsa minima saepe? Possimus corrupti aspernatur
+             nihil sit tenetur debitis sint harum beatae asperiores qui dolor totam iure aut molestias 
+             excepturi, repellendus quasi earum, accusamus in dolorum non. Odio, sint rem. Quas blanditiis
+              consequuntur mollitia sed expedita itaque quam maiores quaerat quisquam delectus!"
+        ]
+        ];
+        $wadah = [];
+        foreach($blog_post as $data ){
+        if ($data['slug'] === $slug) {
+            $wadah = $data;
+        }
+      }
+      
+     return view('single',[
+        "title" => "Single Blog",
+        "single_blog" => $wadah
+     ]);
 });
