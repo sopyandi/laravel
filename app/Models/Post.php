@@ -33,17 +33,12 @@ class Post
 
         public static function all()
         {
-            return self::$blog_post;
+            return collect(self::$blog_post);
         }
         public static function find($slug)
         {
-        $post = self::$blog_post;
-        $data = [];
-        foreach($post as $blog ){
-        if ($blog['slug'] === $slug) {
-            $data = $blog;
-        }
-      }
-      return $data;
+        $post = static :: all();
+
+        return $post->firstWhere('slug' , $slug);
         }
 }

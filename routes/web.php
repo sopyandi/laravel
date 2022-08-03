@@ -2,6 +2,7 @@
 
 use App\Models\Post;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,38 +15,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home',[
-    "title"=>"Home"
-    ]);
-});
-
-Route::get('/about', function () {
-    return view('about' ,[
-    "title"=>"About",
-    "name"=>"Rian Sopyandi",
-    "gmail"=>"sopyandirian12@gmail.com",
-    "img"=>"anwar.jpg"
-
-    ]);
-});
-
-
-
-Route::get('/blog', function () {
-    
-    return view('blog', [
-        "title"=>"Blog",
-        "blog" => Post::all()
-        
-    ]);
-});
+Route::get('/', [PostController::class, 'home']);
+Route::get('/about', [PostController::class, 'about']);
+Route::get('/blog', [PostController::class, 'blog']);
 
 // routs untuk single blog di halaman blog
-Route::get('blog/{slug}', function($slug){
-
-     return view('single',[
-        "title" => "Single Blog",
-        "single_blog" => Post::find($slug)
-     ]);
-});
+Route::get('blog/{slug}', [PostController::class, 'singgle']);
