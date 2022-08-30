@@ -20,4 +20,4 @@ Route::get('/about', [PostController::class, 'about']);
 Route::get('/blog', [PostController::class, 'blog']);
 
 // routs untuk single blog di halaman blog
-Route::get('blog/{slug}', [PostController::class, 'singgle']);
+Route::get('blog/{post:slug}', [PostController::class, 'singgle']);

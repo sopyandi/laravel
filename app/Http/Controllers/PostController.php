@@ -26,15 +26,15 @@ class PostController extends Controller
     {
         return view('blog', [
             "title"=>"Blog",
-            "blog" =>Post::all()
+            "blog" => Post::all()
             
         ]);
     }
-    public function singgle($slug)
+    public function singgle(Post $post)
     {
         return view('single',[
             "title" => "Single Blog",
-            "single_blog" => Post::find($slug)
+            "single_blog" => $post
          ]);
     }
 }
