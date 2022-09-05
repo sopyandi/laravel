@@ -26,6 +26,9 @@
           <a class="nav-link {{($title === 'About') ? 'active' : ''}}" href="about">About</a>
         </li>
         <li class="nav-item">
+          <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}" href="categories">Category</a>
+        </li>
+        <li class="nav-item">
           <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}}" href="blog">Blog</a>
         </li>
         <!-- <li class="nav-item">
@@ -46,3 +49,8 @@
     <script src="../js/script.js"></script>
   </body>
 </html>
+<style>
+  a{
+    text-decoration:none;
+  }
+</style>

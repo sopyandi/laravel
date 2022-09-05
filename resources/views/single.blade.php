@@ -3,9 +3,9 @@
 @section('container')
 <h2>{{$single_blog->title}}</h2>
 <h5>{{$single_blog->author}}</h5>
-<h2>By . Rian soyandi {{$single_blog->category->nama}}</h2>
+<p>By . Rian sopyandi<a href="/categories/{{$single_blog->category->slug}}">  {{$single_blog->category->nama}}</a></p>
  {!!$single_blog->body!!}
-
+ <br><br>
     <a href="/blog">>>Kembali Ke Halaman Sebelumnya<<</a>
 @endsection
 

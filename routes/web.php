@@ -1,8 +1,10 @@
 <?php
 
 use App\Models\Post;
+use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\CategoryController;
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,7 @@ Route::get('/blog', [PostController::class, 'blog']);
 
 // routs untuk single blog di halaman blog
 Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
+//routs untuk category
+Route::get('categories', [CategoryController::class, 'data_category']);
+// routs untuk view categories
+Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
