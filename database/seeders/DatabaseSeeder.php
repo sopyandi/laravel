@@ -34,22 +34,10 @@ class DatabaseSeeder extends Seeder
     //     'email'=>'fitria12@gmail.com',
     //     'password'=>bcrypt('54321')
     // ]);
-    User::factory(3)->create();
-
-
-    Category::create([
-        'nama'=>'Web Programming',
-        'slug'=>'web-programming'
-    ]);
-    Category::create([
-        'nama'=>'Personal',
-        'slug'=>'personal'
-    ]);
-    Post::factory(20)->create();
-
+    
     // Post::create([
-    //     'title'=>'Judul Berita Pertama',
-    //     'slug'=>'judul-berita-pertama',
+        //     'title'=>'Judul Berita Pertama',
+        //     'slug'=>'judul-berita-pertama',
     //     'exerp'=>'  Lorem ipsum dolor sit amet consectetur adipisicing
     //       elit. Sunt maxime nulla officia molestias commodi
     //       nobis, eaque nisi, illo provident cupiditate amet
@@ -74,7 +62,7 @@ class DatabaseSeeder extends Seeder
     //         molestiae placeat?',
     //     'category_id'=>1,
     //     'user_id'=>1
-
+    
     // ]);
     // Post::create([
     //     'title'=>'Judul Berita kedua',
@@ -132,7 +120,20 @@ class DatabaseSeeder extends Seeder
     //         molestiae placeat?',
     //     'category_id'=>2,
     //     'user_id'=>2
-
+    
     // ]);
+
+// User::factory(3)->create();
+
+
+// Category::create([
+//     'nama'=>'Web Programming',
+//     'slug'=>'web-programming'
+// ]);
+// Category::create([
+//     'nama'=>'Personal',
+//     'slug'=>'personal'
+// ]);
+Post::factory(5)->create();
 }
 }

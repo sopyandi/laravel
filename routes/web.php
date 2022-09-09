@@ -4,6 +4,7 @@ use App\Models\Post;
 use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PostController;
+use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 
 /*
@@ -27,3 +28,5 @@ Route::get('blog/{post:slug}', [PostController::class, 'singgle']);
 Route::get('categories', [CategoryController::class, 'data_category']);
 // routs untuk view categories
 Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
+//Short By Blog From Publisher (username/nama)
+Route::get('/shortby_nama/{username}',[UserController::class, 'shortby_user']);

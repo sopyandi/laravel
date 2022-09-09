@@ -26,10 +26,10 @@
           <a class="nav-link {{($title === 'About') ? 'active' : ''}}" href="/about">About</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}" href="/categories">Category</a>
+          <a class="nav-link {{($title === 'List Data Category') ? 'active' : ''}}{{($title === 'rian') ? 'active' : ''}}" href="/categories">Category</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}}" href="/blog">Blog</a>
+          <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}} {{($title === 'Short By Username') ? 'active' : ''}}" href="/blog">Blog</a>
         </li>
         <!-- <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
