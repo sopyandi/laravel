@@ -1,16 +1,63 @@
 @extends('layouts/main')
 
 @section('container')
-<h1>Halaman Blog</h1>
+<!-- <h1>{{$judul}}</h1> -->
+@if($models -> count())
+<div class="card mb-3" style="width:90%; margin-left:5%;">
+  <img src="https://picsum.photos/1300/500?{{$models[0]->category->nama}}" class="card-img-top" alt="{{$models[0]->category->nama}}">
+  <div class="card-body">
+    <h3 class="card-title">{{$models[0]->title}}</h3>
+    <p>By . <a href="/shortby_nama/{{$models[0]->author->username}}">{{$models[0]->author->name}}</a> 
+    Thiss <a href="/categories/{{$models[0]->category->slug}}">  {{$models[0]->category->nama}}</a>
+    <small class="text-muted">
+     {{$models[0]->created_at->diffForHumans()}}</p>
+    </small>
+    <p>{{$models[0]->exerp}}</p>
+    <a href="/blog/{{$models[0]->slug}}" class="btn btn-primary">Read More...</a>
+  </div>
+</div>
+@else
+<p class="text-center fs-4">No Post Found</p>
+@endif
 <br>
-@foreach($blog as $isi_blog )
+
+<div class="container">
+  <div class="row">
+    @foreach($models->skip(1) as $data)
+    <div class="col-md-4 mb-4">
+    <div class="card" style="height:450px;">
+    <div class="position-absolute" id="category">
+      {{$data->category->nama}}
+    </div>
+     <img src="https://picsum.photos/500/300?{{$data->category->nama}}" class="card-img-top" alt="{{$data->category->nama}}">
+     <div class="card-body">
+    <h5 class="card-title">{{$data->title}}</h5>
+    <small class="text-muted"><p class="card-text">{{$data->exerp}}</p></small>
+    <a href="#" class="btn btn-primary" style="float:-right;">Read More..</a>
+       </div>
+    </div>
+  </div>
+  @endforeach
+</div>
+</div>
+
+<!-- @foreach($models->skip(1) as $isi_blog )
 <article class="mb-5 border-bottom pb-3">
 <a href="/blog/{{$isi_blog->slug}}"><h3>{{$isi_blog->title}}</h3></a>
-<p>By . <a href="/shortby_nama/{{$isi_blog->user->id}}">{{$isi_blog->user->name}}</a> Thiss <a href="/categories/{{$isi_blog->category->slug}}">  {{$isi_blog->category->nama}}</a></p>
-<h5>{{$isi_blog->author}}</h5>
+<p>By . <a href="/shortby_nama/{{$isi_blog->author->username}}">{{$isi_blog->author->name}}</a> Thiss <a href="/categories/{{$isi_blog->category->slug}}">  {{$isi_blog->category->nama}}</a></p>
 <p>{{$isi_blog->exerp}}</p>
 <a href="/blog/{{$isi_blog->slug}}">Read More...</a>
 <br>
 </article>
-@endforeach
+@endforeach -->
 @endsection
+<style>
+  #category{
+    border-radius:0px 0px 15px 0px;
+    color:white;
+    height:30px;
+    width:150px;
+    text-align:center;
+    background-color:rgba(0, 0, 0, 0.7);
+  }
+</style>

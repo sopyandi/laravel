@@ -8,10 +8,10 @@ class CategoryController extends Controller
 {
    public function categori(Category $category)
    {
-    return view('category', [
+    return view('blog', [
+        'judul'=>'Short By Category :'.$category->nama,
         'title' => $category->nama,
-        'blog'  => $category->Post,
-        'category' => $category->nama 
+        'models'  => $category->Post->load(['author','category'])
     ]);
    }
    public function data_category()

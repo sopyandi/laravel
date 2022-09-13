@@ -29,4 +29,4 @@ Route::get('categories', [CategoryController::class, 'data_category']);
 // routs untuk view categories
 Route::get('/categories/{category:slug}', [CategoryController::class, 'categori']);
 //Short By Blog From Publisher (username/nama)
-Route::get('/shortby_nama/{username}',[UserController::class, 'shortby_user']);
+Route::get('/shortby_nama/{author:username}',[UserController::class, 'shortby_user']);

@@ -123,17 +123,21 @@ class DatabaseSeeder extends Seeder
     
     // ]);
 
-// User::factory(3)->create();
+User::factory(5)->create();
 
 
-// Category::create([
-//     'nama'=>'Web Programming',
-//     'slug'=>'web-programming'
-// ]);
-// Category::create([
-//     'nama'=>'Personal',
-//     'slug'=>'personal'
-// ]);
-Post::factory(5)->create();
+Category::create([
+    'nama'=>'Web Programming',
+    'slug'=>'web-programming'
+]);
+Category::create([
+    'nama'=>'Web Disign',
+    'slug'=>'web-disign'
+]);
+Category::create([
+    'nama'=>'Personal',
+    'slug'=>'personal'
+]);
+Post::factory(13)->create();
 }
 }
