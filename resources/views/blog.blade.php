@@ -53,7 +53,7 @@
 @endsection
 <style>
   #category{
-    border-radius:0px 0px 15px 0px;
+    border-radius:5px 0px 15px 0px;
     color:white;
     height:30px;
     width:150px;
