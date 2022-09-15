@@ -11,8 +11,9 @@
   <body>
 
 <!-- navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container">
+   <img src="img/ii.png" class="navbar-brand " alt="" style="width:10%;">
     <a class="navbar-brand" href="/">KEMENAG</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -31,11 +32,14 @@
         <li class="nav-item">
           <a class="nav-link {{($title === 'Blog') ? 'active' : ''}}{{($title === 'Single Blog') ? 'active' : ''}} {{($title === 'Short By Username') ? 'active' : ''}}" href="/blog">Blog</a>
         </li>
+        
         <!-- <li class="nav-item">
           <a class="nav-link disabled">Disabled</a>
         </li> -->
       </ul>
     </div>
+   <img src="img/tasikmalaya.png" class="navbar-brand " alt="" style="width:7%;">
+
   </div>
 </nav>
 <!-- ---- -->

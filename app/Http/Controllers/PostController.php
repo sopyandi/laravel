@@ -25,11 +25,16 @@ class PostController extends Controller
     }
     public function blog()
     {
+        $models = Post::latest();
+        if(request('query'))
+        {
+            $models->where('title','like','%'.request('query').'%');
+        }
         return view('blog', [
             "judul"=>"Halaman Blog Post",
             "title"=>"Blog",
             // "blog" => Post::all()
-            "models" => Post::latest()->get()
+            "models" => $models->get()
             
         ]);
     }
@@ -37,7 +42,7 @@ class PostController extends Controller
     {
         return view('single',[
             "title" => "Single Blog",
-            "single_blog" => $post
+            "models" => $post
          ]);
     }
 }

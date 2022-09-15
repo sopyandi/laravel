@@ -2,6 +2,16 @@
 
 @section('container')
 <!-- <h1>{{$judul}}</h1> -->
+<div class="row justify-content-center">
+  <div class="col-md-6 mb-4">
+    <form action="/blog">
+    <div class="input-group mb-3">
+    <input type="text" class="form-control" placeholder="Search..." name="query" value="{{request('query')}}">
+    <button class="btn btn-success" type="submit" name="search">Search</button>
+      </div>
+    </form>
+  </div>
+</div>
 @if($models -> count())
 <div class="card mb-3" style="width:90%; margin-left:5%;">
   <img src="https://picsum.photos/1300/500?{{$models[0]->category->nama}}" class="card-img-top" alt="{{$models[0]->category->nama}}">
@@ -16,9 +26,6 @@
     <a href="/blog/{{$models[0]->slug}}" class="btn btn-primary">Read More...</a>
   </div>
 </div>
-@else
-<p class="text-center fs-4">No Post Found</p>
-@endif
 <br>
 
 <div class="container">
@@ -33,14 +40,16 @@
      <div class="card-body">
     <h5 class="card-title">{{$data->title}}</h5>
     <small class="text-muted"><p class="card-text">{{$data->exerp}}</p></small>
-    <a href="#" class="btn btn-primary" style="float:-right;">Read More..</a>
+    <a href="/blog/{{$data->slug}}" class="btn btn-primary" style="float:-right;">Read More..</a>
        </div>
     </div>
   </div>
   @endforeach
 </div>
 </div>
-
+@else
+<p class="text-center fs-4">No Post Found</p>
+@endif
 <!-- @foreach($models->skip(1) as $isi_blog )
 <article class="mb-5 border-bottom pb-3">
 <a href="/blog/{{$isi_blog->slug}}"><h3>{{$isi_blog->title}}</h3></a>
