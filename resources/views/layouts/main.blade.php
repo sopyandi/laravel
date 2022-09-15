@@ -7,13 +7,16 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
     <link rel="stylesheet" href="../css/style.css">
     <link rel="icon" href="../img/ii.png" sizes="32x32">
+    <script src="assets/js/jquery.js"></script> 
+    <script src="assets/js/popper.js"></script> 
+    <script src="assets/js/bootstrap.js"></script>
   </head>
   <body>
 
 <!-- navbar -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-success">
   <div class="container">
-   <img src="img/ii.png" class="navbar-brand " alt="" style="width:10%;">
+   <img src="img/ii.png" class="navbar-brand " alt="" style="width:5%;">
     <a class="navbar-brand" href="/">KEMENAG</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -38,8 +41,7 @@
         </li> -->
       </ul>
     </div>
-   <img src="img/tasikmalaya.png" class="navbar-brand " alt="" style="width:7%;">
-
+    
   </div>
 </nav>
 <!-- ---- -->
