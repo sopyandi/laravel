@@ -9,9 +9,22 @@ use App\Models\Category;
 class Post extends Model
 {
     use HasFactory;
+    //izin isi database
     protected $guarded = ['id'];
+    //...
+    //eager load prosses
     protected $with = ['category','author'];
-    
+    //...
+    // search for blog post
+    public function scopeFilter($query, array $filter){
+        if(isset($filter['search']) ? $filter['search'] : false)
+        {
+           return $query->where('title','like','%'.$filter['search'].'%')
+                   ->orwhere('body','like','%'.$filter['search'].'%');
+        }
+    }
+    //...
+    //relation table
     public function category(){
      return $this->belongsTo(Category::class);
     }
@@ -19,4 +32,5 @@ class Post extends Model
     {
         return $this->belongsTo(User::class, 'user_id');
     }
+    //...
 }

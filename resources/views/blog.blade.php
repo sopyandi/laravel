@@ -6,8 +6,8 @@
   <div class="col-md-6 mb-4">
     <form action="/blog">
     <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Search..." name="query" value="{{request('query')}}">
-    <button class="btn btn-success" type="submit" name="search">Search</button>
+    <input type="text" class="form-control" placeholder="Search..." name="search" value="{{request('query')}}">
+    <button class="btn btn-success" type="submit" name="">Search</button>
       </div>
     </form>
   </div>
